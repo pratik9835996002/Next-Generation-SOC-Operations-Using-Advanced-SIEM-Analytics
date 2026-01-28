@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "id": "rule_001",
+      "name": "Multiple Failed SSH Logins",
+      "description": "Detects multiple failed SSH login attempts from same source",
+      "severity": "high",
+      "pattern": "failed password|authentication failure|invalid user",
+      "log_type": "auth",
+      "threshold": 5,
+      "time_window": 300,
+      "enabled": true
+    },
+    {
+      "id": "rule_002",
+      "name": "Unauthorized Privilege Escalation",
+      "description": "Detects attempts to use sudo with invalid credentials",
+      "severity": "critical",
+      "pattern": "sudo|privilege|authorization|denied",
+      "log_type": "auth",
+      "threshold": 3,
+      "time_window": 600,
+      "enabled": true
+    },
+    {
+      "id": "rule_003",
+      "name": "Suspicious Process Execution",
+      "description": "Detects execution of suspicious processes",
+      "severity": "medium",
+      "pattern": "bash|curl|wget|nc|ncat|python|perl",
+      "log_type": "audit",
+      "threshold": 2,
+      "time_window": 300,
+      "enabled": true
+    },
+    {
+      "id": "rule_004",
+      "name": "File Integrity Violation",
+      "description": "Detects unauthorized file modifications",
+      "severity": "high",
+      "pattern": "file modified|integrity check|modified time|permission changed",
+      "log_type": "audit",
+      "threshold": 1,
+      "time_window": 60,
+      "enabled": true
+    },
+    {
+      "id": "rule_005",
+      "name": "Port Scanning Activity",
+      "description": "Detects potential port scanning activity",
+      "severity": "medium",
+      "pattern": "port|connection refused|timeout|reset",
+      "log_type": "network",
+      "threshold": 10,
+      "time_window": 300,
+      "enabled": true
+    }
+  ]
+}

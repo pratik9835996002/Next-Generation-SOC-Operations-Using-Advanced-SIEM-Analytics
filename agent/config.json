@@ -1,0 +1,21 @@
+{
+  "backend_url": "http://localhost:5000",
+  "log_sources": [
+    {
+      "type": "syslog",
+      "path": "/var/log/syslog",
+      "enabled": true
+    },
+    {
+      "type": "auth",
+      "path": "/var/log/auth.log",
+      "enabled": true
+    },
+    {
+      "type": "application",
+      "path": "/var/log/application.log",
+      "enabled": false
+    }
+  ],
+  "collection_interval": 5
+}
